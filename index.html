@@ -1,6 +1,284 @@
-<head>
-	<meta name="google-site-verification" content="5U7n2rI9Bg0a0EhWIBTUx7mo3Wmk-quDTFs6yeGuG4M" />
+<html><head>
+    <title>Gate42</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600" rel="stylesheet">
+    <style>
+        body {
+            background-color: #FDF7EE;
+            padding: 0;
+            margin: 0;
+            background-image: url('imgs/mnist.gif');
+            background-attachment: fixed;
+        }
+        
+        .intro {
+            text-align: center;
+            color: #57596b;
+            font-family: Raleway;
+        }
+        
+        .intro h1 {
+            font-size: 60px;
+            font-weight: 500;
+            margin: 0px;
+            color: #1F618D;
+        }
+        
+        .intro h2 {
+            font-size: 36px;
+            font-weight: 400;
+            margin: 0px;
+            color: rgba(0, 0, 0, 0.4);
+            line-height: 24px;
+        }
+        
+        .intro .p {
+            margin: auto;
+            padding: 40px 0;
+            font-weight: 300;
+            font-size: 16px;
+            letter-spacing: 1pt;
+            line-height: 160%;
+            max-width: 730px;
+            text-align: left;
+        }
+        
+        .intro .p h3 {
+            font-size: 26px;
+            font-weight: 600;
+            margin: 19px 0 12px 0;
+        }
+        
+        .intro ul {
+            margin: 8px 0;
+        }
+        
+        .intro .p a,
+        .intro .p a:link,
+        .intro .p a:visited {
+            color: #1F618D;
+            font-weight: 500;
+            transition: .15s color;
+        }
+        
+        .intro .p a:hover {
+            color: #f79db1;
+        }
+        
+        .intro .p small {
+            font-size: 12px;
+            line-height: 16px;
+            opacity: 0.5;
+            display: block;
+            margin-top: 10px;
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 1;
+            z-index: -1;
+            background-color: rgb(253, 247, 238);
+            opacity: 0.7;
+        }
+        
+        ul > li > ul > li {
+            font-size: 12px;
+            line-height: 18px;
+        }
+        
+        @keyframes play {
+            0% {
+                background-position: 0px 0;
+            }
+            100% {
+                background-position: 0px -2016px;
+            }
+        }
+
+        
+        .left {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            width: 50%;
+            height: 180px;
+            margin-top: -90px;
+        }
+        
+        .right {
+            position: absolute;
+            top: 0;
+            width: 50%;
+            left: 50%;
+            padding: 0 44px;
+            box-sizing: border-box;
+            background-color: #6458C3;
+            color: #efdafb;
+            min-height: 100%;
+        }
+        
+        .left,
+        .right .p .desc,
+        .right .p .topics,
+        .right .p .team,
+        .right .p small {
+            opacity: 0;
+            -webkit-animation: smooth-entry 1s forwards;
+            -moz-animation: smooth-entry 1s forwards;
+            animation: smooth-entry 1s forwards;
+        }
+        
+        .left {
+            -webkit-animation-delay: .2s;
+            -moz-animation-delay: .2s;
+            animation-delay: .2s;
+        }
+        
+        .right .p .desc {
+            -webkit-animation-delay: .5s;
+            -moz-animation-delay: .5s;
+            animation-delay: .5s;
+        }
+        
+        .right .p .topics {
+            -webkit-animation-delay: .9s;
+            -moz-animation-delay: .9s;
+            animation-delay: .9s;
+        }
+        
+        .right .p .team {
+            -webkit-animation-delay: 1.3s;
+            -moz-animation-delay: 1.3s;
+            animation-delay: 1.3s;
+        }
+        
+        .right .p small {
+            -webkit-animation-delay: 1.6s;
+            -moz-animation-delay: 1.6s;
+            animation-delay: 1.6s;
+        }
+        
+        @media (max-width: 780px) {
+            .left {
+                position: static;
+                height: 200px;
+                text-align: center;
+                width: auto;
+                margin: 0;
+            }
+            .right {
+                position: static;
+                width: auto;
+            }
+            .p {
+                max-width: 400px;
+            }
+            .logo {}
+            .intro {
+                margin-top: 30px;
+            }
+            .intro h1 {
+                font-size: 40px;
+                margin-top: 10px;
+            }
+            h2 {
+                font-size: 25px;
+            }
+        }
+        
+        @-webkit-keyframes smooth-entry {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(+1.4em);
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0);
+            }
+        }
+        
+        @-moz-keyframes smooth-entry {
+            0% {
+                opacity: 0;
+                -moz-transform: translateY(+1.4em);
+            }
+            100% {
+                opacity: 1;
+                -moz-transform: translateY(0);
+            }
+        }
+        
+        @keyframes smooth-entry {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(+1.4em);
+                -moz-transform: translateY(+1.4em);
+                -ms-transform: translateY(+1.4em);
+                -o-transform: translateY(+1.4em);
+                transform: translateY(+1.4em);
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0);
+                -moz-transform: translateY(0);
+                -ms-transform: translateY(0);
+                -o-transform: translateY(0);
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
+
 <body>
-quantum hello world
-</body>
+    <div class="overlay"></div>
+    <div class="intro">
+        <div class="">
+            <h1>Gate42</h1>
+            <br>
+            <h2>quantum computing lab</h2>
+        </div>
+        <div class="">
+            <div class="p">
+                <section class="desc">
+                    Gate42* is a newly formed scientific research group of physicists, computer scientists and developers based in Armenia. Our scientific interests include Quantum Information Theory, Near term applications of Quantum Computing, Quantum Algorithms, Quantum Simulation and Quantum Machine Learning. The group’s mission is to advance the quantum computing frontier and get closer to solving real world problems.
+                    You can follow our progress on <a href="https://github.com/gate42qc/">github</a>. Check out our recent presentation at Rigetti QC Hackathon (Berkley), jointly with Hrant Graribyan.
+                </section>
+                <section class="team">
+                    <h3>Team</h3>                   
+                    <strong>Hakob Avetisyan, PhD</strong>,(IPR NAS RA)/ <a href="https://scholar.google.com/citations?user=q1I8-sUAAAAJ&hl=en ">Google Scholar</a>
+                    <br> <strong>Davit Khachatryan, PhD candidate</strong> (IPR NAS RA) / <a href="https://scholar.google.com/citations?user=XqM5HPoAAAAJ&hl=en">Google Scholar</a> 
+                    <br> <strong>Hrayr Azizbekyan, PhD</strong> Université de Lorraine and IPR NAS RA  / 
+                    <a href="https://scholar.google.com/citations?user=DppS1IMAAAAJ&hl=en">Google Scholar</a> 
+                    <br>
+                </section>
+                <section class="topics">
+                    <h3>Some facts</h3>
+                    In the past 2 decades the world has entered a new era of technological revolution. Quantum Information Science is a multidisciplinary field that brings together physicists, computer scientists and engineers. Ongoing developments of quantum computers give promise that one day quantum computers will solve problems that are not solvable for classical computers. Thus, quantum computers are the key of finding the answers for many scientific questions including new way of solving problems of quantum chemistry, search algorithms, drug discovery, cryptography and etc.
+
+                </section>
+
+                 <section class="team">
+                    <h3>Advisors</h3>                   
+                    Hrant Gharibyan - Stanforn University / Google <a href="https://scholar.google.com/citations?user=vdmjq7sAAAAJ&hl=en">Google Scholar</a> 
+                    <br>
+                </section>
+                 <section class="team">
+                    <h3>Partners</h3>                   
+                    <a href="http://yerevann.com">YerevanN</a> 
+                    <br><a href="https://smartgate.vc">SmartgateVC</a>  
+                    <br>
+                </section>
+                <br>
+
+                <small>Get in touch [<a href="mailto:team@gate42.org">team@gate42.org</a>], [<a href="">Facebook Group</a>]</small>
+                <small>*You can find more on 42 number [<a href="#">somelink</a>] here [<a href="#">code</a>]</small>
+
+            </div>
+        </div>
+
+
+
+</div></body></html>
